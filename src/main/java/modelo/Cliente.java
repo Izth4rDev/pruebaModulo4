@@ -13,4 +13,7 @@ public class Cliente {
     private String apellidoCliente;
     private int aniosCliente;
     private CategoriaEnum categoriaEnum;
+
+
 }
+
