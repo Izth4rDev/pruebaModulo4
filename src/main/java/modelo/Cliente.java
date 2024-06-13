@@ -14,6 +14,8 @@ public class Cliente {
     private int aniosCliente;
     private CategoriaEnum categoriaEnum;
 
-
+    public String toCsv() {
+        return runCliente + "," + nombreCliente + "," + apellidoCliente + "," + aniosCliente;
+    }
 }
 
