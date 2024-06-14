@@ -4,5 +4,5 @@ import java.io.File;
 import java.util.List;
 
 public abstract class Exportador {
-    public abstract void exportar(File fileName, List<Cliente> listaClientes);
+    public abstract void exportar(String fileName, List<Cliente> listaClientes);
 }
