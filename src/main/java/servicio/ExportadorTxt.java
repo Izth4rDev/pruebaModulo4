@@ -29,7 +29,7 @@ public class ExportadorTxt extends Exportador{
 
         File archivo = new File(nav);
 
-        try(PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+        try(PrintWriter writer = new PrintWriter(new FileWriter(archivo))) {
             for (Cliente cliente : listaClientes) {
                 linea = listaClientes.get(contador).getRunCliente()+","+listaClientes.get(contador).getNombreCliente()+","
                         +listaClientes.get(contador).getApellidoCliente()+","+listaClientes.get(contador).getAniosCliente()

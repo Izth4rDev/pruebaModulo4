@@ -27,7 +27,7 @@ public class Menu {
     }
 
     public void mostrarMenu() {
-        int option = 0;
+        int option;
         do{
             System.out.println("\n-- Menú Principal --");
             System.out.println("1. Listar clientes");
@@ -48,7 +48,6 @@ public class Menu {
                 case 3:clienteServicio.editarCliente();
                     break;
                 case 4: archivoServicio.cargarDatos(fileName1,clienteServicio.getListaClientes());
-
                     break;
                 case 5:exportarArchivo();
                     break;
@@ -64,15 +63,15 @@ public class Menu {
         System.out.println("-------------Crear Cliente-------------");
         System.out.println("Ingresa RUN del Cliente: ");
         String rut = sc.nextLine();
-        System.out.print("Ingresa Nombre del Cliente: ");
+        System.out.println("Ingresa Nombre del Cliente: ");
         String nombre = sc.nextLine();
         System.out.println("Ingresa Apellido del Cliente: ");
         String apellido = sc.nextLine();
         System.out.println("Ingresa años como Cliente: ");
         int edad = sc.nextInt();
         sc.nextLine();
-
         clienteServicio.agregarClientes(rut,nombre,apellido,edad, CategoriaEnum.ACTIVO);
+
     }
     //Método Exportar Archivo
     public void exportarArchivo(){
@@ -81,7 +80,7 @@ public class Menu {
         System.out.println("1-.Formato Csv");
         System.out.println("2.-Formato txt");
         System.out.println("Ingrese una opción para exportar:");
-        int option = 0;
+        int option;
         option = sc.nextInt();
         sc.nextLine();
 
