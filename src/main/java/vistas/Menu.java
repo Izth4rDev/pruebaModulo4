@@ -2,6 +2,7 @@ package vistas;
 import modelo.CategoriaEnum;
 import modelo.Cliente;
 import servicio.ExportadorCsv;
+import servicio.ExportadorTxt;
 import servicio.ArchivoServicio;
 import servicio.ClienteServicio;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Menu {
     private ClienteServicio clienteServicio;
     private ArchivoServicio archivoServicio;
     private ExportadorCsv exportadorCsv;
-    //private ExportarTxt exportarTxt;
+    private ExportadorTxt exportarTxt;
     private String fileName1 = "DBClientes.csv";
     private String fileName = "Clientes";
     private Scanner sc = new Scanner(System.in);
@@ -22,7 +23,7 @@ public class Menu {
         clienteServicio = new ClienteServicio();
         archivoServicio = new ArchivoServicio();
         exportadorCsv = new ExportadorCsv();
-        //exportarTxt = new ExportarTxt();
+        exportarTxt = new ExportadorTxt();
     }
 
     public void mostrarMenu() {
@@ -46,7 +47,14 @@ public class Menu {
                     break;
                 case 3:clienteServicio.editarCliente();
                     break;
-                case 5: exportadorCsv.exportar(fileName1,clienteServicio.getListaClientes());
+                case 4:
+                    System.out.println("Método importar");
+                    break;
+                case 5:exportarArchivo();
+                    break;
+                default:
+                    System.out.println("Opción incorrecta, elige una opción valida");
+                    break;
             }
         }while(option!=6);
     }
@@ -65,5 +73,22 @@ public class Menu {
         sc.nextLine();
 
         clienteServicio.agregarClientes(rut,nombre,apellido,edad, CategoriaEnum.ACTIVO);
+    }
+    //Método Exportar Archivo
+    public void exportarArchivo(){
+        System.out.println("---------Exportar Datos-----------");
+        System.out.println("Seleccione el formato a exportar:");
+        System.out.println("1-.Formato Csv");
+        System.out.println("2.-Formato txt");
+        System.out.println("Ingrese una opción para exportar:");
+        int option = 0;
+        option = sc.nextInt();
+        sc.nextLine();
+
+        if (option==1){
+            exportadorCsv.exportar(fileName1,clienteServicio.getListaClientes());
+        }else if (option==2){
+            exportarTxt.exportar(fileName,clienteServicio.getListaClientes());
+        }
     }
 }
