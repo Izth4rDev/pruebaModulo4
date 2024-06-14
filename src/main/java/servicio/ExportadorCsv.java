@@ -25,6 +25,7 @@ public class ExportadorCsv extends Exportador {
             System.out.println("Ejemplo -> /home/usuario/Desktop");
             ruta = sc.nextLine();
             nav = ruta+"/"+fileName;
+            // /Users/miguelrondanelli/Desktop
         }
 
         int contador = 0;
