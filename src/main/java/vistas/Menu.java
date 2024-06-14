@@ -15,7 +15,7 @@ public class Menu {
     private String fileName = "Clientes";
     private Scanner sc = new Scanner(System.in);
 
-// metodos para construccion y seleccion de menú
+    // metodos para construccion y seleccion de menú
     public Menu() {
         // instanciando atributos//
         clienteServicio = new ClienteServicio();
@@ -40,11 +40,11 @@ public class Menu {
 
             switch (option){
                 case 1: clienteServicio.listarClientes();
-                break;
+                    break;
                 case 2: addCLiente();
-                break;
+                    break;
                 case 3:clienteServicio.editarCliente();
-                break;
+                    break;
             }
         }while(option!=6);
     }

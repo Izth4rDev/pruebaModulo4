@@ -1,4 +1,8 @@
 package servicio;
+import modelo.Cliente;
+import java.io.File;
+import java.util.List;
 
-public class Exportador {
+public abstract class Exportador {
+    public abstract void exportar(File fileName, List<Cliente> listaClientes);
 }
