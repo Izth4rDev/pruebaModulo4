@@ -47,8 +47,8 @@ public class Menu {
                     break;
                 case 3:clienteServicio.editarCliente();
                     break;
-                case 4:
-                    System.out.println("Método importar");
+                case 4: archivoServicio.cargarDatos(fileName1,clienteServicio.getListaClientes());
+
                     break;
                 case 5:exportarArchivo();
                     break;
@@ -88,7 +88,7 @@ public class Menu {
         if (option==1){
             exportadorCsv.exportar(fileName1,clienteServicio.getListaClientes());
         }else if (option==2){
-          exportarTxt.exportar(fileName,clienteServicio.getListaClientes());
+            exportarTxt.exportar(fileName,clienteServicio.getListaClientes());
         }
     }
 }
