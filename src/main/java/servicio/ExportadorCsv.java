@@ -9,12 +9,13 @@ import java.util.List;
 public class ExportadorCsv extends Exportador {
 
     @Override
-    public void exportar(File fileName, List<Cliente> listaClientes) {
+    public void exportar(String fileName, List<Cliente> listaClientes) {
         String linea;
         int contador = 0;
 
-        System.out.println(fileName.getName());
-        try(PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
+        File archivo = new File("C://"+fileName);
+
+        try(PrintWriter writer = new PrintWriter(new FileWriter(archivo))) {
             for (Cliente cliente : listaClientes) {
                 linea = listaClientes.get(contador).getRunCliente()+","+listaClientes.get(contador).getNombreCliente()+","
                         +listaClientes.get(contador).getApellidoCliente()+","+listaClientes.get(contador).getAniosCliente()
