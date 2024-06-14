@@ -1,6 +1,7 @@
 package vistas;
 import modelo.CategoriaEnum;
 import modelo.Cliente;
+import servicio.ExportadorCsv;
 import servicio.ArchivoServicio;
 import servicio.ClienteServicio;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 public class Menu {
     private ClienteServicio clienteServicio;
     private ArchivoServicio archivoServicio;
-    //private ExportarCsv exportadorCsv;
+    private ExportadorCsv exportadorCsv;
     //private ExportarTxt exportarTxt;
     private String fileName1 = "DBClientes.csv";
     private String fileName = "Clientes";
@@ -20,7 +21,7 @@ public class Menu {
         // instanciando atributos//
         clienteServicio = new ClienteServicio();
         archivoServicio = new ArchivoServicio();
-        //exportadorCsv = new ExportarCsv();
+        exportadorCsv = new ExportadorCsv();
         //exportarTxt = new ExportarTxt();
     }
 
@@ -45,6 +46,7 @@ public class Menu {
                     break;
                 case 3:clienteServicio.editarCliente();
                     break;
+                case 5: exportadorCsv.exportar(fileName1,clienteServicio.getListaClientes());
             }
         }while(option!=6);
     }
