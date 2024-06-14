@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ExportadorCsv extends Exportador {
-
     @Override
     public void exportar(String fileName, List<Cliente> listaClientes) {
         String linea,os, ruta,nav;
@@ -23,13 +22,13 @@ public class ExportadorCsv extends Exportador {
             nav = ruta+"\\"+fileName;
         }else{
             System.out.println("Ingresa la ruta en donde desea exportar el archivo DBClientes.csv:");
-            System.out.println("Ejemplo -> home/usuario/Desktop");
+            System.out.println("Ejemplo -> /home/usuario/Desktop");
             ruta = sc.nextLine();
             nav = ruta+"/"+fileName;
+            // /Users/miguelrondanelli/Desktop
         }
 
         int contador = 0;
-
         File archivo = new File(nav);
 
         try(PrintWriter writer = new PrintWriter(new FileWriter(archivo))) {
