@@ -5,7 +5,6 @@ import modelo.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 @Getter
 
 public class ClienteServicio {
@@ -13,7 +12,6 @@ public class ClienteServicio {
     public ClienteServicio(){
         this.listaClientes = new ArrayList<Cliente>();
     }
-
     public void listarClientes(){
         System.out.println("-----Datos del cliente------");
         if(!listaClientes.isEmpty()){

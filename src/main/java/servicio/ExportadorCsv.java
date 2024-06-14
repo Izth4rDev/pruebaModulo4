@@ -29,7 +29,6 @@ public class ExportadorCsv extends Exportador {
         }
 
         int contador = 0;
-
         File archivo = new File(nav);
 
         try(PrintWriter writer = new PrintWriter(new FileWriter(archivo))) {
