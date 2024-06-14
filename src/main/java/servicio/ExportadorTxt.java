@@ -7,7 +7,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class ExportadorTxt extends Exportador{
-
     @Override
     public void exportar(String fileName, List<Cliente> listaClientes) {
         try(PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
