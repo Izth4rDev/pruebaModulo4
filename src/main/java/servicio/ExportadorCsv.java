@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class ExportadorCsv extends Exportador {
     @Override
     public void exportar(String fileName, List<Cliente> listaClientes) {
+        //variables
         String linea,os, ruta,nav;
         Scanner sc = new Scanner(System.in);
         //Devuelve el nombre del sistema operativo del usuario
@@ -28,15 +29,14 @@ public class ExportadorCsv extends Exportador {
             // /Users/miguelrondanelli/Desktop
         }
 
-        int contador = 0;
         File archivo = new File(nav);
 
         try(PrintWriter writer = new PrintWriter(new FileWriter(archivo))) {
             for (Cliente cliente : listaClientes) {
-                linea = listaClientes.get(contador).getRunCliente()+","+listaClientes.get(contador).getNombreCliente()+","
-                        +listaClientes.get(contador).getApellidoCliente()+","+listaClientes.get(contador).getAniosCliente()
-                        +","+listaClientes.get(contador).getCategoriaEnum();
-                contador++;
+                linea = cliente.getRunCliente()+","+cliente.getNombreCliente()+","
+                        +cliente.getApellidoCliente()+","+cliente.getAniosCliente()
+                        +","+cliente.getCategoriaEnum();
+                //Escribimos en el archivo
                 writer.println(linea);
             }
         } catch (IOException e) {

@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class ExportadorTxt extends Exportador{
     @Override
     public void exportar(String fileName, List<Cliente> listaClientes) {
-        String linea, os,ruta,nav;
-        int contador = 0;
+        //variables
+        String linea,os,ruta,nav;
         Scanner sc = new Scanner(System.in);
         //Devuelve el nombre del sistema operativo del usuario
         os = System.getProperty("os.name").toLowerCase();
@@ -31,12 +31,11 @@ public class ExportadorTxt extends Exportador{
 
         try(PrintWriter writer = new PrintWriter(new FileWriter(archivo))) {
             for (Cliente cliente : listaClientes) {
-                linea = listaClientes.get(contador).getRunCliente()+","+listaClientes.get(contador).getNombreCliente()+","
-                        +listaClientes.get(contador).getApellidoCliente()+","+listaClientes.get(contador).getAniosCliente()
-                        +","+listaClientes.get(contador).getCategoriaEnum();
-                contador++;
+                linea = cliente.getRunCliente()+","+cliente.getNombreCliente()+","
+                        +cliente.getApellidoCliente()+","+cliente.getAniosCliente()
+                        +","+cliente.getCategoriaEnum();
+                //Escribimos en el archivo
                 writer.println(linea);
-
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
