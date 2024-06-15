@@ -29,13 +29,13 @@ public class Menu {
     public void mostrarMenu() {
         int option;
         do{
-            System.out.println("\n-- Menú Principal --");
-            System.out.println("1. Listar clientes");
-            System.out.println("2. Agregar cliente");
-            System.out.println("3. Editar cliente");
-            System.out.println("4. Importar datos");
-            System.out.println("5. Exportar datos");
-            System.out.println("6. Terminar programa");
+            System.out.println("\u001B[36;40;1m"+ "-- Menú Principal --" +"\u001B[0m");
+            System.out.println("\u001B[35m"+"1. Listar clientes" +"\u001B[0m");
+            System.out.println("\u001B[35m"+"2. Agregar cliente" +"\u001B[0m");
+            System.out.println("\u001B[35m"+"3. Editar cliente"+"\u001B[0m");
+            System.out.println("\u001B[35m"+"4. Importar datos"+"\u001B[0m");
+            System.out.println("\u001B[35m"+"5. Exportar datos"+"\u001B[0m");
+            System.out.println("\u001B[33m"+"6. Terminar programa"+"\u001B[0m");
 
             option = sc.nextInt();
             sc.nextLine();
@@ -51,9 +51,13 @@ public class Menu {
                     break;
                 case 5:exportarArchivo();
                     break;
+                case 6:
+                    System.out.println("Saliendo del programa");
+                    break;
                 default:
                     System.out.println("Opción incorrecta, elige una opción valida");
                     break;
+
             }
         }while(option!=6);
     }
