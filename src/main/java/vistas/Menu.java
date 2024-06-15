@@ -5,6 +5,8 @@ import servicio.ExportadorCsv;
 import servicio.ExportadorTxt;
 import servicio.ArchivoServicio;
 import servicio.ClienteServicio;
+import utilidades.Utilidad;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -36,6 +38,7 @@ public class Menu {
             System.out.println("\u001B[35m"+"4. Importar datos"+"\u001B[0m");
             System.out.println("\u001B[35m"+"5. Exportar datos"+"\u001B[0m");
             System.out.println("\u001B[33m"+"6. Terminar programa"+"\u001B[0m");
+            System.out.println("\u001B[32m"+"   Elegir una opción:"+"\u001B[0m");
 
             option = sc.nextInt();
             sc.nextLine();
@@ -53,6 +56,7 @@ public class Menu {
                     break;
                 case 6:
                     System.out.println("Saliendo del programa");
+                    Utilidad.pausa(2);
                     break;
                 default:
                     System.out.println("Opción incorrecta, elige una opción valida");
